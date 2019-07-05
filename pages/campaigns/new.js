@@ -34,9 +34,6 @@ class CampaignNew extends Component {
  };
 
 
-
-
-
 render() {
     return (
       <Layout>
