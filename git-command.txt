@@ -1,0 +1,17 @@
+# To add files
+
+git add <filename> 
+OR
+git add .
+
+# To check the status
+
+git status
+
+# To commit into git
+git commit -m "Message"  <filename>
+OR
+git commit -m "Message" .
+
+# to transfer into Github account
+git push -u origin master
