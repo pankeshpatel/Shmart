@@ -80,6 +80,18 @@ contract Campaign {
     // Called by the manager to create a new
     // 'spending request'
     function createRequest(string description, uint value, address recipient) public restricted {
+       // The following are Data holding places:
+
+       // Storage -- holds data between function calls
+       // Pretty much like a computer's hard drive.
+       // The declared variables in this contract
+       // is an example of storage.
+
+       // Memory -- Temporary place to store Data
+       // Pretty much like a computer's RAM.
+       // the function ARGUMENT (e.g., minimumContribution)
+       // is an example of "memory".
+
         Request memory newRequest = Request({
            description: description,
            value: value,
