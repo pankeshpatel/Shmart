@@ -23,9 +23,20 @@ contract Campaign {
         mapping(address => bool) approvals;
     }
 
+    // List of requests that the manager
+    // has created.
     Request[] public requests;
+
+    // This is an address of the person
+    // who is managing this campaign
     address public manager;
+
+    // Minimum donation required to be considered
+    // a contributor or approver
     uint public minimumContribution;
+
+    // Lisy of addresses for every person
+    // who has donated the money.
     mapping(address => bool) public approvers;
     uint public approversCount;
 
@@ -34,11 +45,15 @@ contract Campaign {
         _;
     }
 
+    // Constructor function that sets the
+    //minimumContribution and the owner.
     function Campaign(uint minimum, address creator) public {
         manager = creator;
         minimumContribution = minimum;
     }
 
+    // Called when someober wants to donate money
+    // to the campaign and become an approver
     function contribute() public payable {
         require(msg.value > minimumContribution);
 
@@ -46,6 +61,8 @@ contract Campaign {
         approversCount++;
     }
 
+    // Called by the manager to create a new
+    // 'spending request'
     function createRequest(string description, uint value, address recipient) public restricted {
         Request memory newRequest = Request({
            description: description,
@@ -58,6 +75,8 @@ contract Campaign {
         requests.push(newRequest);
     }
 
+    // Called by the each contributor to approver
+    // a spending request
     function approveRequest(uint index) public {
         Request storage request = requests[index];
 
@@ -68,6 +87,9 @@ contract Campaign {
         request.approvalCount++;
     }
 
+    // After a request has gotten enough approvals,
+    // the manager can call this to get money sent
+    // to the vendor.
     function finalizeRequest(uint index) public restricted {
         Request storage request = requests[index];
 
