@@ -14,12 +14,26 @@ contract CampaignFactory {
 }
 
 contract Campaign {
+
     struct Request {
+        // Describes why the request is being created.
         string description;
+
+        // Amount of money that the manager wants
+        // to send to the vendor
         uint value;
+
+        // Address that the money will be sent to
         address recipient;
+
+        // True if the request has already
+        //been processed (money sent)
         bool complete;
+
+
         uint approvalCount;
+
+        // this is for votting mechanism
         mapping(address => bool) approvals;
     }
 
@@ -48,6 +62,8 @@ contract Campaign {
     // Constructor function that sets the
     //minimumContribution and the owner.
     function Campaign(uint minimum, address creator) public {
+        // we can reterive the address through
+        // msg.sender
         manager = creator;
         minimumContribution = minimum;
     }
