@@ -1,3 +1,8 @@
+// This file is responsible for compiling
+// the contract  (.sol) file.
+// The compiled contracts are generated into
+// build folder.
+
 const path = require('path');
 const solc = require('solc');
 const fs = require('fs-extra');
