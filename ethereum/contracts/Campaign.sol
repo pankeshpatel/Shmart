@@ -3,7 +3,8 @@ pragma solidity ^0.4.17;
 
 // This is to list the address of  all deployed contracts.
 // The deployed contract's cost will be charged to the Caller's
-// account. Because he has been calling this function.
+// account. Because he has been calling.
+
 contract CampaignFactory {
     address[] public deployedCampaigns;
 
