@@ -29,14 +29,14 @@ beforeEach(async () => {
   // 3. Sending a transaction by providing account and gas information.
   factory = await new web3.eth.Contract(JSON.parse(compiledRecordFactory.interface))
   .deploy({ data: compiledRecordFactory.bytecode })
-  .send({ from: accounts[0], gas: '1000000' });
+  .send({ from: accounts[1], gas: '3000000' });
 
   // Now access the interfaces of the depoyed contracts.
   // The first interface, we have been accessing is -- createRecord
   await factory.methods.createRecord("Pankesh",  "1", "A", "B", "C", 0,
               "0x14723a09acff6d2a60dcdf7aa4aff308fddc160c", "A,B,C").send({
-                from: accounts[0],
-                gas: '1000000'
+                from: accounts[1],
+                gas: '3000000'
   });
 
   // Access another method of the deployed contract.
@@ -49,5 +49,16 @@ beforeEach(async () => {
     JSON.parse(compiledRegisteration.interface),
     recordAddress
   );
+
+});
+
+
+describe('Registeration', () => {
+
+  // This is a test to check whether contract is deployed or not.
+  it('deploys a factory and a registeration', () => {
+    assert.ok(factory.options.address);
+    assert.ok(registeration.options.address);
+  });
 
 });

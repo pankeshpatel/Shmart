@@ -1,11 +1,10 @@
 {
-  "name": "kickstart",
+  "name": "Shmart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "dev": "node server.js"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
