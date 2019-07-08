@@ -1,6 +1,5 @@
 pragma solidity ^0.4.17;
 
-
 contract RecordFactory{
 
     address[] public deployedRecords;
@@ -9,8 +8,7 @@ contract RecordFactory{
                           string  role, string org_type, string provider,
                           uint wallet_balance, address wallet_ID, string smart_record) public{
 
-        address newData = new registeration(msg.sender,
-                                name, id, role, org_type, provider,
+        address newData = new registeration(msg.sender, name, id, role, org_type, provider,
                                 wallet_balance, wallet_ID, smart_record);
 
         deployedRecords.push(newData);

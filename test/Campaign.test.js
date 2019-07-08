@@ -1,3 +1,6 @@
+// This is a file for contract testing.
+// The testing is done on local blockchain network (i.e., ganache).
+
 const assert = require('assert');
 const ganache = require('ganache-cli');
 const Web3 = require('web3');
