@@ -1,6 +1,11 @@
+// This would deploy your contract on Rinkby Network.
+// please note that it is recommanded that
+// First, test your contract on the local network -- ganache
+// Then,  deploy it on Test Network.
+
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
-const compiledFactory = require('./build/CampaignFactory.json');
+const compiledRecordFactory = require('./build/RecordFactory.json');
 
 
 const provider = new HDWalletProvider(
@@ -12,13 +17,17 @@ const web3 = new Web3(provider);
 let accounts;
 
 const deploy = async () => {
+
+	// Get accounts from your Rinkby network.
 	accounts = await web3.eth.getAccounts();
+
 
 	console.log('Attempting to deploy from account', accounts[0]);
 
-	const result = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
-		.deploy({ data: '0x' + compiledFactory.bytecode})
-		.send({gas: '1000000', from: accounts[0]});
+	// Deploy your contract on Rinkby Network.
+	const result = await new web3.eth.Contract(JSON.parse(compiledRecordFactory.interface))
+		.deploy({ data: '0x' + compiledRecordFactory.bytecode})
+		.send({gas: '3000000', from: accounts[0]});
 
 	console.log('Contract is deployed to' , result.options.address);
 };

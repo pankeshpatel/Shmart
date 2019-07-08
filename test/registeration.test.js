@@ -61,4 +61,9 @@ describe('Registeration', () => {
     assert.ok(registeration.options.address);
   });
 
+  it('marks caller as the manager', async () => {
+    const manager = await registeration.methods.manager().call();
+    assert.equal(accounts[1], manager);
+  });
+
 });

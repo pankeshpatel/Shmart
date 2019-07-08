@@ -12,7 +12,7 @@ This repository contains code for SHMART Marketplace using Ethereum blockchain.
       - `Build` directory contains compiled contracts.
       - Files
         - `compile.js` file compiles the smart contracts. The compiled contracts are generated into `Build` directory. We compile each contract separately. Therefore, the file name convention is `compile-<contract-name>.js` file responsible to compile `<contract-name>` contract.
-        - `deploy.js` file deploys smart contracts on Blockchain network.
+        - `deploy.js` file deploys smart contracts on Rinkby Test Blockchain network.
 
 
-- `test` directory contains files to test the compiled contracts. The file name convention is  `<contract-name>.test.js`.
+- `test` directory contains files to test the compiled contracts. The file name convention is  `<contract-name>.test.js`. The contracts are tested on local network -- Ganache.
