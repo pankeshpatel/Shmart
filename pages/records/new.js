@@ -5,7 +5,7 @@ import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
 import { Router } from '../../routes';
 
-class CampaignNew extends Component {
+class RecordNew extends Component {
   state = {
     minimumContribution: '',
     errorMessage: '',
@@ -37,7 +37,7 @@ class CampaignNew extends Component {
 render() {
     return (
       <Layout>
-        <h3>Create a Campaign</h3>
+        <h3>Create a Record</h3>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
@@ -61,4 +61,4 @@ render() {
   }
 }
 
-export default CampaignNew;
+export default RecordNew;
