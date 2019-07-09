@@ -42,7 +42,7 @@ exports.default = function () {
       fileName: _jsxFileName,
       lineNumber: 16
     }
-  }, 'Records')), _react2.default.createElement(_routes.Link, { route: '/campaigns/new', __source: {
+  }, 'Records')), _react2.default.createElement(_routes.Link, { route: '/records/new', __source: {
       fileName: _jsxFileName,
       lineNumber: 19
     }

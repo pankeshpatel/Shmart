@@ -1,19 +1,23 @@
-// This is a route file to facilitate multiple pages
+// This is a route file to facilitate multiple pages.
+// This file defines the routes of our application.
 
 const routes = require('next-routes')();
 
  routes
-    // Form to make a campaign
-   .add('/campaigns/new', '/campaigns/new')
-   // Campaign details for campaign at the "address"
-   .add('/campaigns/:address', '/campaigns/show')
-   // Requests for campaign at the "address"
-   .add('/campaigns/:address/requests', '/campaigns/requests/index')
-   // Form to create a request for campaign at the "address"
-   .add('/campaigns/:address/requests/new', '/campaigns/requests/new');
+    // Form to make a record
+   .add('/records/new', '/records/new')
+
+   // record details for record at the "address"
+   .add('/records/:address', '/records/show')
+
+   // Requests for record at the "address"
+   .add('/records/:address/requests', '/records/requests/index')
+   
+   // Form to create a request for record at the "address"
+   .add('/records/:address/requests/new', '/records/requests/new');
 
 module.exports = routes;
 
 
-// List of campaigns
+// List of records
 // localhost:3000/

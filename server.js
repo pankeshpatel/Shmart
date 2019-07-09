@@ -1,3 +1,6 @@
+// This file boot up next application
+// Tell the application to use routes.js
+
 const { createServer } = require('http');
 const next = require('next');
 
