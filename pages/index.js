@@ -4,48 +4,60 @@ import { Card, Button } from 'semantic-ui-react';
 import Layout from '../components/Layout';
 import { Link } from '../routes';
 
-class CampaignIndex extends Component {
+class RecordsIndex extends Component {
+
+  // The getInitialProps() interacts with the Smart Contract
+  // fetch the records in JSON.
   static async getInitialProps() {
-    const campaigns = await factory.methods.getDeployedCampaigns().call();
-    return { campaigns };
+    const records = await factory.methods.getDeployedRecords().call();
+    return { records: records };
   }
 
-  renderCampaigns() {
-    const items = this.props.campaigns.map(address => {
+// The renderRecords() function is responsible
+// for generating the main content of this page.
+// For instance, this page receives the JSON records from getInitialProps()
+// and returns the HTML page to the render() function.
+
+  renderRecords() {
+    const items = this.props.records.map(address => {
       return {
-        header: address,
+        header: address ,
         description: (
-          <Link route={`/campaigns/${address}`}>
-            <a>View Campaign</a>
+          <Link route={`/records/${address}`}>
+            <a>View Records</a>
           </Link>
         ),
-        fluid: true
+         fluid: true
       };
     });
 
     return <Card.Group items={items} />;
   }
-
+// The render() is responsible for returning complete HTML page for user View.
+// This HTML page contains
+// 1. The layout of the page. These are common components and stays
+// into components folder.
+// 2. main content of the page.
   render(){
     return (
       <Layout>
         <div>
-          <h3>Open Campaigns</h3>
-          <Link route="/campaigns/new">
+          <h3>Open records</h3>
+          <Link route="/records/new">
            <a>
              <Button
                floated="right"
-               content="Create Campaign"
+               content="Create Records"
                icon="add circle"
                primary
              />
            </a>
          </Link>
-            {this.renderCampaigns()}
+            {this.renderRecords()}
           </div>
        </Layout>
      );
   }
 }
 
-export default CampaignIndex;
+export default RecordsIndex;
