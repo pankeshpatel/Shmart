@@ -18,8 +18,6 @@ let web3;
 // If this code finds that metamask plugin is installed, then it will
 // use windows variable. Otherwise, it will make an HTTP request to Rinkby.
 
-
-
 // check that we are in the browser and check that metamask is running
 if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
   // We are in the browser and metamask is running.

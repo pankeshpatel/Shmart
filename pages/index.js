@@ -32,6 +32,9 @@ class RecordsIndex extends Component {
       };
     });
 
+// Card.Group is an "Semantic-UI components"
+// to display a group of card.
+// Refer -- https://semantic-ui.com/views/card.html
     return <Card.Group items={items} />;
   }
 // The render() is responsible for returning complete
