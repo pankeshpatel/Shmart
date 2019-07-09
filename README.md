@@ -2,6 +2,11 @@
 This repository contains code for SHMART Marketplace using Ethereum blockchain.
 
 
+**How to run this project***
+
+- Open the root directory of this project in terminal. In our case, the root directory is `Shmart`. We
+have tested this code on Windows.
+- Type `npm run dev` or `node server.js` in terminal.
 
 
 **Directory structure**
@@ -13,9 +18,12 @@ This repository contains code for SHMART Marketplace using Ethereum blockchain.
       - Files
         - `compile.js` file compiles the smart contracts. The compiled contracts are generated into `Build` directory. We compile each contract separately. Therefore, the file name convention is `compile-<contract-name>.js` file responsible to compile `<contract-name>` contract.
         - `deploy.js` file deploys smart contracts on Rinkby Test Blockchain network.
+        -  `web.js`
+        -  `factory.js`
 
 
 - `test` directory contains files to test the compiled contracts. The file name convention is  `<contract-name>.test.js`. The contracts are tested on local network -- Ganache.
 
 - `.next` directory is automatically created by the project.
 - `pages` directory contains react components that get turned into a  webpages. E.g., `localhost:3000/<react-page-name.js>`, `localhost:3000/<folder-name>/<react-page-name.js>`
+  - If the file name is `index.js`, the react will assume it for the first page of the project.
