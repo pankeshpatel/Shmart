@@ -15,8 +15,9 @@ class RecordsIndex extends Component {
 
 // The renderRecords() function is responsible
 // for generating the main content of this page.
-// For instance, this page receives the JSON records from getInitialProps()
-// and returns the HTML page to the render() function.
+// For instance, this page receives the JSON records
+// from getInitialProps() and returns the HTML page
+// to the render() function.
 
   renderRecords() {
     const items = this.props.records.map(address => {
@@ -33,7 +34,8 @@ class RecordsIndex extends Component {
 
     return <Card.Group items={items} />;
   }
-// The render() is responsible for returning complete HTML page for user View.
+// The render() is responsible for returning complete
+// HTML page for user View.
 // This HTML page contains
 // 1. The layout of the page. These are common components and stays
 // into components folder.

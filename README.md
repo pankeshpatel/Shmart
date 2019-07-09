@@ -26,4 +26,6 @@ have tested this code on Windows.
 
 - `.next` directory is automatically created by the project.
 - `pages` directory contains react components that get turned into a  webpages. E.g., `localhost:3000/<react-page-name.js>`, `localhost:3000/<folder-name>/<react-page-name.js>`
-  - If the file name is `index.js`, the react will assume it for the first page of the project.
+  - If the file name is `index.js`, the react will assume it for the landing page of the project.
+
+- `components` directory contains the code files for common UI components, such as Layout, Header and so on.
