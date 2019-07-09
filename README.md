@@ -18,8 +18,8 @@ have tested this code on Windows.
       - Files
         - `compile.js` file compiles the smart contracts. The compiled contracts are generated into `Build` directory. We compile each contract separately. Therefore, the file name convention is `compile-<contract-name>.js` file responsible to compile `<contract-name>` contract.
         - `deploy.js` file deploys smart contracts on Rinkby Test Blockchain network.
-        -  `web.js`
-        -  `factory.js`
+        -  `web.js` file configure web3 with a metamask provider.
+        -  `factory.js` tells the web3 that a deployed copy of the contract exists.
 
 
 - `test` directory contains files to test the compiled contracts. The file name convention is  `<contract-name>.test.js`. The contracts are tested on local network -- Ganache.
