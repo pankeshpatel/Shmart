@@ -16,3 +16,6 @@ This repository contains code for SHMART Marketplace using Ethereum blockchain.
 
 
 - `test` directory contains files to test the compiled contracts. The file name convention is  `<contract-name>.test.js`. The contracts are tested on local network -- Ganache.
+
+- `.next` directory is automatically created by the project.
+- `pages` directory contains react components that get turned into a  webpages. E.g., `localhost:3000/<react-page-name.js>`, `localhost:3000/<folder-name>/<react-page-name.js>`

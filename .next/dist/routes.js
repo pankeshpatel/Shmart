@@ -1,9 +1,21 @@
 'use strict';
 
+// This is a route file to facilitate multiple pages
+
 var routes = require('next-routes')();
 
-routes.add('/campaigns/new', '/campaigns/new').add('/campaigns/:address', '/campaigns/show').add('/campaigns/:address/requests', '/campaigns/requests/index').add('/campaigns/:address/requests/new', '/campaigns/requests/new');
+routes
+// Form to make a campaign
+.add('/campaigns/new', '/campaigns/new')
+// Campaign details for campaign at the "address"
+.add('/campaigns/:address', '/campaigns/show')
+// Requests for campaign at the "address"
+.add('/campaigns/:address/requests', '/campaigns/requests/index')
+// Form to create a request for campaign at the "address"
+.add('/campaigns/:address/requests/new', '/campaigns/requests/new');
 
 module.exports = routes;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVua25vd24iXSwibmFtZXMiOlsicm91dGVzIiwicmVxdWlyZSIsImFkZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI7O0FBQUEsSUFBSUEsU0FBU0Msd0JBQWI7O0FBRUFELE9BQU9FLEdBQVAsQ0FBVyxnQkFBWCxFQUE2QixnQkFBN0IsRUFBK0NBLEdBQS9DLENBQW1ELHFCQUFuRCxFQUEwRSxpQkFBMUUsRUFBNkZBLEdBQTdGLENBQWlHLDhCQUFqRyxFQUFpSSwyQkFBakksRUFBOEpBLEdBQTlKLENBQWtLLGtDQUFsSyxFQUFzTSx5QkFBdE07O0FBRUFDLE9BQU9DLE9BQVAsR0FBaUJKLE1BQWpCIiwiZmlsZSI6InVua25vd24iLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgcm91dGVzID0gcmVxdWlyZSgnbmV4dC1yb3V0ZXMnKSgpO1xuXG5yb3V0ZXMuYWRkKCcvY2FtcGFpZ25zL25ldycsICcvY2FtcGFpZ25zL25ldycpLmFkZCgnL2NhbXBhaWducy86YWRkcmVzcycsICcvY2FtcGFpZ25zL3Nob3cnKS5hZGQoJy9jYW1wYWlnbnMvOmFkZHJlc3MvcmVxdWVzdHMnLCAnL2NhbXBhaWducy9yZXF1ZXN0cy9pbmRleCcpLmFkZCgnL2NhbXBhaWducy86YWRkcmVzcy9yZXF1ZXN0cy9uZXcnLCAnL2NhbXBhaWducy9yZXF1ZXN0cy9uZXcnKTtcblxubW9kdWxlLmV4cG9ydHMgPSByb3V0ZXM7Il19
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVua25vd24iXSwibmFtZXMiOlsicm91dGVzIiwicmVxdWlyZSIsImFkZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI7O0FBQUEsSUFBSUEsU0FBU0Msd0JBQWI7O0FBRUFELE9BQU9FLEdBQVAsQ0FBVyxnQkFBWCxFQUE2QixnQkFBN0IsRUFBK0NBLEdBQS9DLENBQW1ELHFCQUFuRCxFQUEwRSxpQkFBMUUsRUFBNkZBLEdBQTdGLENBQWlHLDhCQUFqRyxFQUFpSSwyQkFBakksRUFBOEpBLEdBQTlKLENBQWtLLGtDQUFsSyxFQUFzTSx5QkFBdE07O0FBRUFDLE9BQU9DLE9BQVAsR0FBaUJKLE1BQWpCIiwiZmlsZSI6InVua25vd24ifQ==
+
+// List of campaigns
+// localhost:3000/
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy5qcyJdLCJuYW1lcyI6WyJyb3V0ZXMiLCJyZXF1aXJlIiwiYWRkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFFQSxJQUFNLFNBQVMsQUFBZjs7QUFFQztBQUNHLEFBREg7Q0FFRyxBQUZILElBRU8sQUFGUCxrQkFFeUIsQUFGekI7QUFHRSxBQUhGO0NBSUcsQUFKSCxJQUlPLEFBSlAsdUJBSThCLEFBSjlCO0FBS0UsQUFMRjtDQU1HLEFBTkgsSUFNTyxBQU5QLGdDQU11QyxBQU52QztBQU9FLEFBUEY7Q0FRRyxBQVJILElBUU8sQUFSUCxvQ0FRMkMsQUFSM0M7O0FBVUQsT0FBTyxBQUFQLFVBQWlCLEFBQWpCOztBQUdBO0FBQ0EiLCJmaWxlIjoicm91dGVzLmpzIiwic291cmNlUm9vdCI6IkQ6L3JlYWN0L2tpY2tzdGFydC9TaG1hcnQifQ==

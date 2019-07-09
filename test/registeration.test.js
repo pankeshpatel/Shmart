@@ -52,9 +52,7 @@ beforeEach(async () => {
 
 });
 
-
 describe('Registeration', () => {
-
   // This is a test to check whether contract is deployed or not.
   it('deploys a factory and a registeration', () => {
     assert.ok(factory.options.address);
