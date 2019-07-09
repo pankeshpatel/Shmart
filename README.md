@@ -2,7 +2,7 @@
 This repository contains code for SHMART Marketplace using Ethereum blockchain.
 
 
-**How to run this project***
+**How to run this project**
 
 - Open the root directory of this project in terminal. In our case, the root directory is `Shmart`. We
 have tested this code on Windows.
