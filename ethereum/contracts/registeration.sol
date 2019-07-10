@@ -58,7 +58,6 @@ contract Registeration {
 
     } 
 
-
     function getSummary() public view returns (
     string, string, string, string, string, uint, address, string) {
         return (
@@ -76,5 +75,4 @@ contract Registeration {
     function getRequestsCount() public view returns (uint) {
         return data.length;
     }
-
 }

@@ -4,7 +4,6 @@ import { Card, Grid, Button } from 'semantic-ui-react';
 import web3 from '../../ethereum/web3';
 import { Link } from '../../routes';
 import Registeration from '../../ethereum/registeration';
-//import ContributeForm from '../../components/ContributeForm';
 
 
 class RecordShow extends Component {
@@ -108,12 +107,6 @@ class RecordShow extends Component {
     return <Card.Group items={items} />;
   }
 
-    // render (){
-    //   return (
-    //     <h3>Record Show</h3>
-    //   );
-    // }
-
   render() {
      return (
        <Layout>
@@ -125,23 +118,10 @@ class RecordShow extends Component {
                {/* <ContributeForm address={this.props.address} /> */}
              </Grid.Column>
            </Grid.Row>
-
-           {/* <Grid.Row>
-             <Grid.Column>
-               <Link route={`/campaigns/${this.props.address}/requests`}>
-                 <a>
-                   <Button primary>View Requests</Button>
-                 </a>
-               </Link>
-             </Grid.Column>
-           </Grid.Row> */}
          </Grid>
        </Layout>
      );
    }
-
-
 }
-
 
 export default RecordShow;
