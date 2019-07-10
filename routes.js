@@ -1,6 +1,8 @@
 // This is a route file to facilitate multiple pages.
 // This file defines the routes of our application.
 
+
+// next-routes is the library.
 const routes = require('next-routes')();
 
  routes

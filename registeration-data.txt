@@ -1,6 +1,10 @@
 Name , id , role, org_type, provider, wallet_balance, wallet_ID, SHMART record
 
-"Pankesh",  "1", "A", "B", "C", 0, 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c, "A,B,C"
+// For Factory
+"Pankesh",  "1", "A", "B", "C", 0, 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c, "A,B,C" 
+
+// Registeration Contract
+0x14723a09acff6d2a60dcdf7aa4aff308fddc160c, "Pankesh",  "1", "A", "B", "C", 0, 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c, "A,B,C" 
 
 
 

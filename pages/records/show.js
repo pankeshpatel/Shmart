@@ -7,10 +7,10 @@ import Campaign from '../../ethereum/campaign';
 import ContributeForm from '../../components/ContributeForm';
 
 
-class CampaignShow extends Component {
+class RecordShow extends Component {
   static async getInitialProps(props) {
-    const campaign = Campaign(props.query.address);
-    const summary = await campaign.methods.getSummary().call();
+    const record = Campaign(props.query.address);
+    const summary = await record.methods.getSummary().call();
 
     return {
       address: props.query.address,
@@ -22,7 +22,7 @@ class CampaignShow extends Component {
     };
   }
 
-  renderCards() {
+  renderRecords() {
     const {
       balance,
       manager,
@@ -71,10 +71,10 @@ class CampaignShow extends Component {
   render() {
      return (
        <Layout>
-         <h3>Campaign Show</h3>
+         <h3>Record Show</h3>
          <Grid>
            <Grid.Row>
-             <Grid.Column width={10}>{this.renderCards()}</Grid.Column>
+             <Grid.Column width={10}>{this.renderRecords()}</Grid.Column>
              <Grid.Column width={6}>
                <ContributeForm address={this.props.address} />
              </Grid.Column>
@@ -98,4 +98,4 @@ class CampaignShow extends Component {
 }
 
 
-export default CampaignShow;
+export default RecordShow;

@@ -46,6 +46,8 @@ class RecordNew extends Component {
           from: accounts[0]
         });
 
+      // This will redirect user to the home page, once the new 
+      // instance of contract is published.
       Router.pushRoute('/');
 
     } catch (err) {

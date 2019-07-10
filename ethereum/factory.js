@@ -5,14 +5,14 @@
 // through deploy.js file.
 
 // the deployed contract exists at address
-// 0x38CbC2161a59EB25c08AD35B66eADB2A4718F3C5
+// 0xC2124e6807A97A80076922834d8c079D11bD7331
 
 import web3 from './web3';
 import RecordFactory from './build/RecordFactory.json';
 
 const instance = new web3.eth.Contract(
   JSON.parse(RecordFactory.interface),
-  '0x38CbC2161a59EB25c08AD35B66eADB2A4718F3C5'
+  '0xC2124e6807A97A80076922834d8c079D11bD7331'
 );
 
 export default instance;

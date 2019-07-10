@@ -4,12 +4,11 @@ contract RecordFactory{
 
     address[] public deployedRecords;
 
-    function createRecord(string  name, string  id,
-                          string  role, string org_type, string provider,
-                          uint wallet_balance, address wallet_ID, string smart_record) public{
+    function createRecord(string  name, string  id, string  role, string orgType, string provider,
+                          uint walletBalance, address walletID, string smartRecord) public{
 
-        address newData = new registeration(msg.sender, name, id, role, org_type, provider,
-                                wallet_balance, wallet_ID, smart_record);
+        address newData = new Registeration(msg.sender, name, id, role, orgType, provider,
+                                walletBalance, walletID, smartRecord);
 
         deployedRecords.push(newData);
     }
@@ -17,66 +16,65 @@ contract RecordFactory{
     function getDeployedRecords() public view returns (address[]){
         return deployedRecords;
     }
-
 }
 
-contract registeration {
-
-    struct Reg_data{
+contract Registeration {
+    
+    struct RegisterationData{
         string  name;
         string  id;
         string  role;
-        string org_type;
-        string provider;
-        uint wallet_balance;
-        address wallet_ID;
-        string smart_record;
+        string  orgType;
+        string  provider;
+        uint   walletBalance;
+        address walletID;
+        string  smartRecord;
     }
 
-    Reg_data[] public data;
+    RegisterationData[] public data;
 
-    // This is an address of the person
-    // who is managing this campaign
+    // This is an address, who is managing this record
     address public manager;
 
-    function registeration(address creator, string  name, string  id, string  role,
-                      string org_type, string provider, uint wallet_balance,
-                      address wallet_ID, string smart_record) public {
+    function Registeration(address creator, 
+                          string  name, string  id, string  role,
+                         string orgType, string provider, uint walletBalance,
+                         address walletID, string smartRecord) public {
 
         manager = creator;
 
-          Reg_data memory newRegisteration = Reg_data({
+        RegisterationData memory newRegisteration = RegisterationData({
             name : name,
             id : id,
             role : role,
-            org_type : org_type,
+            orgType : orgType,
             provider : provider,
-            wallet_balance : wallet_balance,
-            wallet_ID: wallet_ID,
-            smart_record: smart_record
+            walletBalance : walletBalance,
+            walletID: walletID,
+            smartRecord: smartRecord
         });
 
         data.push(newRegisteration);
 
+    } 
+
+
+    function getSummary() public view returns (
+    string, string, string, string, string, uint, address, string) {
+        return (
+        data[0].name, 
+        data[0].id, 
+        data[0].role, 
+        data[0].orgType, 
+        data[0].provider, 
+        data[0].walletBalance, 
+        data[0].walletID, 
+        data[0].smartRecord 
+    );
     }
 
-
-    // function createRequest(string  name, string  id, string  role,
-    //                   string org_type, string provider, uint wallet_balance,
-    //                   address wallet_ID, string smart_record) public {
-
-    //     Reg_data memory newRegisteration = Reg_data({
-    //         name : name,
-    //         id : id,
-    //         role : role,
-    //         org_type : org_type,
-    //         provider : provider,
-    //         wallet_balance : wallet_balance,
-    //         wallet_ID: wallet_ID,
-    //         smart_record: smart_record
-    //     });
-
-    //     data.push(newRegisteration);
-    // }
+    function getRequestsCount() public view returns (uint) {
+        return data.length;
+    }
 
 }
