@@ -89,7 +89,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "19eee8933185f4839075"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c84d085352e42dc4e6fa"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -754,7 +754,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_error.js","2":"bundles\\pages\\_document.js","3":"commons","6":"bundles\\pages\\index.js","7":"bundles\\pages\\records\\new.js"}[chunkId]||chunkId) + "";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_error.js","2":"bundles\\pages\\_document.js","3":"commons","5":"bundles\\pages\\index.js","7":"bundles\\pages\\records\\show.js"}[chunkId]||chunkId) + "";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -804,7 +804,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/_next/83c15b19-6d73-451c-8d17-9733a120cc36/webpack/";
+/******/ 	__webpack_require__.p = "/_next/f8617840-5b31-4f12-aafd-f7789b2e0a2d/webpack/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
