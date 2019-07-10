@@ -1,5 +1,0 @@
-SELECT *
-FROM sensordbtable
-WHERE timestamp
-    BETWEEN timestamp '2019-06-02 18:32:18.085'
-        AND timestamp '2019-06-02 18:33:38.089';
