@@ -3,70 +3,116 @@ import Layout from '../../components/Layout';
 import { Card, Grid, Button } from 'semantic-ui-react';
 import web3 from '../../ethereum/web3';
 import { Link } from '../../routes';
-import Campaign from '../../ethereum/campaign';
-import ContributeForm from '../../components/ContributeForm';
+import Registeration from '../../ethereum/registeration';
+//import ContributeForm from '../../components/ContributeForm';
 
 
 class RecordShow extends Component {
   static async getInitialProps(props) {
-    const record = Campaign(props.query.address);
+    const record = Registeration(props.query.address);
     const summary = await record.methods.getSummary().call();
-
+    
     return {
       address: props.query.address,
-      minimumContribution: summary[0],
-      balance: summary[1],
-      requestsCount: summary[2],
-      approversCount: summary[3],
-      manager: summary[4]
+      name:summary[0], 
+      id: summary[1], 
+      role: summary[2], 
+      orgType: summary[3], 
+      provider: summary[4], 
+      walletBalance: summary[5], 
+      walletID: summary[6], 
+      smartRecord: summary[7]       
     };
   }
 
   renderRecords() {
+
     const {
-      balance,
-      manager,
-      minimumContribution,
-      requestsCount,
-      approversCount
+      address,
+      name, 
+      id, 
+      role, 
+      orgType, 
+      provider, 
+      walletBalance, 
+      walletID, 
+      smartRecord   
     } = this.props;
 
     const items = [
       {
-        header: manager,
-        meta: 'Address of Manager',
+        header: address,
+        meta: 'Address of Record in Blockchain',
         description:
-          'The manager created this campaign and can create requests to withdraw money',
+          'This is an address of Record in Blockchain',
         style: { overflowWrap: 'break-word' }
       },
       {
-        header: minimumContribution,
-        meta: 'Minimum Contribution (wei)',
+        header: name,
+        meta: 'Name of a person',
         description:
-          'You must contribute at least this much wei to become an approver'
+          'This is a name of register, who record his/her information into portal',
+        style: { overflowWrap: 'break-word' }
       },
       {
-        header: requestsCount,
-        meta: 'Number of Requests',
+        header: id,
+        meta: 'id of a person',
         description:
-          'A request tries to withdraw money from the contract. Requests must be approved by approvers'
+          'This is an id of a person',
+        style: { overflowWrap: 'break-word' }
       },
       {
-        header: approversCount,
-        meta: 'Number of Approvers',
+        header: role,
+        meta: 'role of a person',
         description:
-          'Number of people who have already donated to this campaign'
+          'This is an role of a person',
+        style: { overflowWrap: 'break-word' }
       },
       {
-        header: web3.utils.fromWei(balance, 'ether'),
-        meta: 'Campaign Balance (ether)',
+        header: orgType,
+        meta: 'Organization Type',
         description:
-          'The balance is how much money this campaign has left to spend.'
-      }
+          'It provides information about Organization Type',
+        style: { overflowWrap: 'break-word' }
+      },
+      {
+        header: provider,
+        meta: 'provider',
+        description:
+          'It provides information about provider',
+        style: { overflowWrap: 'break-word' }
+      },
+      {
+        header: orgType,
+        meta: 'Organization Type',
+        description:
+          'It provides information about Organization Type',
+        style: { overflowWrap: 'break-word' }
+      },
+      {
+        header: walletBalance,
+        meta: 'Wallet Balance',
+        description:
+          'It is wallet balance.',
+        style: { overflowWrap: 'break-word' }
+      },
+      {
+        header: smartRecord,
+        meta: 'SHMART record',
+        description:
+          'IoT Device data',
+        style: { overflowWrap: 'break-word' }
+      }     
     ];
 
     return <Card.Group items={items} />;
   }
+
+    // render (){
+    //   return (
+    //     <h3>Record Show</h3>
+    //   );
+    // }
 
   render() {
      return (
@@ -76,11 +122,11 @@ class RecordShow extends Component {
            <Grid.Row>
              <Grid.Column width={10}>{this.renderRecords()}</Grid.Column>
              <Grid.Column width={6}>
-               <ContributeForm address={this.props.address} />
+               {/* <ContributeForm address={this.props.address} /> */}
              </Grid.Column>
            </Grid.Row>
 
-           <Grid.Row>
+           {/* <Grid.Row>
              <Grid.Column>
                <Link route={`/campaigns/${this.props.address}/requests`}>
                  <a>
@@ -88,7 +134,7 @@ class RecordShow extends Component {
                  </a>
                </Link>
              </Grid.Column>
-           </Grid.Row>
+           </Grid.Row> */}
          </Grid>
        </Layout>
      );
