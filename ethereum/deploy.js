@@ -20,8 +20,6 @@ const deploy = async () => {
 
 	// Get accounts from your Rinkby network.
 	accounts = await web3.eth.getAccounts();
-
-
 	console.log('Attempting to deploy from account', accounts[0]);
 
 	// Deploy your contract on Rinkby Network.

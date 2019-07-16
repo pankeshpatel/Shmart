@@ -11,7 +11,6 @@
 
 
 import Web3 from 'web3';
-
 let web3;
 
 // our server will send JavaScript code to the browser to execute.
